@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
       if (c == '\n') { // fin d'un tweet => affichage
         // affichage et re-initialisation               
 	//
-	// one ne prend que les symboles suceptible d'être 
+	// on ne prend que les symboles suceptible d'être 
 	// non-nuls car si on donne trop d'entrée toujours à 0
 	// (donc sans information) cela gêne l'apprentissage	
         for(i=97;i<123;i++) // 'a'=97 --> 'z'=122
