@@ -5,7 +5,7 @@
 int main()
 {
     const unsigned int num_input = 26;
-    const unsigned int num_output = 1;
+    const unsigned int num_output = 7;
     const unsigned int num_layers = 3;
     const unsigned int num_neurons_hidden = 13;
     const float desired_error = (const float) 0.001;
@@ -19,7 +19,7 @@ int main()
     fann_set_activation_function_hidden(ann, FANN_SIGMOID_SYMMETRIC);
     fann_set_activation_function_output(ann, FANN_SIGMOID_SYMMETRIC);
 
-    fann_train_on_file(ann, "sample.txt", max_epochs,
+    fann_train_on_file(ann, "training.data", max_epochs,
         epochs_between_reports, desired_error);
 
     fann_save(ann, "network.net");

@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 
   int c,i,nbr=0,tab[256] = {0};
 
-  printf("argv2 = %s argv3 = %s\n", argv[2], argv[3]);
+  //printf("argv2 = %s argv3 = %s\n", argv[2], argv[3]);
 
   if(argv[1] == NULL) {
 	printf("Usage : ./makeData training/test < <fichier_source> > <fichier_dest>\n");
@@ -35,25 +35,25 @@ int main(int argc, char **argv) {
              fprintf(output, "%f ",(float)tab[i]/(float)nbr);
 	     
 	     if(!strcmp(argv[2], "./tweets/trainData.de.txt"))
-		fprintf(output, "-0.9");
+		fprintf(output, "1 -1 -1 -1 -1 -1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.es.txt"))
-		fprintf(output, "-0.6");
+		fprintf(output, "-1 1 -1 -1 -1 -1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.it.txt"))
-		fprintf(output, "-0.3");
+		fprintf(output, "-1 -1 1 -1 -1 -1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.tr.txt"))
-		fprintf(output, "0");
+		fprintf(output, "-1 -1 -1 1 -1 -1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.en.txt"))
-		fprintf(output, "0.3");
+		fprintf(output, "-1 -1 -1 -1 1 -1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.fr.txt"))
-		fprintf(output, "0.6");
+		fprintf(output, "-1 -1 -1 -1 -1 1 -1");
 
 	     else if(!strcmp(argv[2], "./tweets/trainData.pt.txt"))
-		fprintf(output, "0.9");
+		fprintf(output, "-1 -1 -1 -1 -1 -1 1");
 
         fprintf(output,"\n");         
         // re-initialisation
@@ -76,6 +76,7 @@ int main(int argc, char **argv) {
 	// (donc sans information) cela gêne l'apprentissage	
         for(i=97;i<123;i++) // 'a'=97 --> 'z'=122
              fprintf(output, "%f ",(float)tab[i]/(float)nbr);
+	fprintf(output, "-1 -1 -1 -1 -1 -1 -1");
         fprintf(output,"\n");         
         // re-initialisation
         nbr = 0;
