@@ -14,7 +14,7 @@ int maxIndex(fann_type *output, int size) {
 
 int main(int argc , char **argv) {
   fann_type *calc_out;
-  int i,j;
+  int i;
 	
   if (argc==1) {
     printf("usage : test testFile.txt network.net\n");
